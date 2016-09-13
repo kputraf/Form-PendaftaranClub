@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbL, rbP;
     Button buttonOK;
     Spinner spKota;
-    TextView tvHasil, tvAskot, tvJeka, tvPS, tvNama;
+    TextView tvHasil, tvAK, tvJeka, tvPS, tvNama, tvAskot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +32,22 @@ public class MainActivity extends AppCompatActivity {
         rgStatus = (RadioGroup) findViewById(R.id.radioGroupStatus);
         buttonOK = (Button) findViewById(R.id.buttonOK);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
-        tvAskot = (TextView) findViewById(R.id.textViewAK);
+        tvAK = (TextView) findViewById(R.id.textViewAK);
+        tvAskot = (TextView) findViewById(R.id.textViewAskot);
         tvNama = (TextView) findViewById(R.id.textViewNama);
         tvPS = (TextView) findViewById(R.id.textViewPS);
         tvJeka = (TextView) findViewById(R.id.textViewJeka);
+        spKota = (Spinner) findViewById(R.id.spinnerKota);
         rbP = (RadioButton) findViewById(R.id.radioButtonP);
         rbL = (RadioButton) findViewById(R.id.radioButtonL);
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                doClick();
-                doProses();
+
                 doCoba();
+                doProses();
+                doClick();
             }
         });
     }
@@ -52,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
     private void doCoba() {
         String hasil = "Posisi Bermain : ";
         int startlen = hasil.length();
-        if (cbPG.isChecked()) hasil += cbPG.getText() + "\n";
-        if (cbSG.isChecked()) hasil += cbSG.getText() + "\n";
-        if (cbC.isChecked()) hasil += cbC.getText() + "\n";
+        if (cbPG.isChecked()) hasil += cbPG.getText() + ", ";
+        if (cbSG.isChecked()) hasil += cbSG.getText() + ", ";
+        if (cbC.isChecked()) hasil += cbC.getText() + ", ";
         if (hasil.length() == startlen) hasil += "Belum Memilih Posisi";
         tvPS.setText(hasil);
     }
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             String nama = etNama.getText().toString();
 
             tvNama.setText("Nama : " + nama);
-            tvAskot.setText("Asal Kota : " + spKota.getSelectedItem().toString());
+
         }
     }
 
@@ -82,10 +85,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doClick() {
+        tvAskot.setText("Asal Kota : " + spKota.getSelectedItem().toString());
         String jeka = null;
 
         if (rbL.isChecked()) {
             jeka = rbL.getText().toString();
+
+        } else if (rbP.isChecked()) {
+            jeka = rbP.getText().toString();
+        }
+        if (jeka == null) {
+            tvJeka.setText("Belum Memilih Jenis Kelamin");
         } else {
             tvJeka.setText("Jenis Kelamin : " + jeka);
         }

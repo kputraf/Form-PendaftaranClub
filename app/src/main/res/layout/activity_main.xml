@@ -12,6 +12,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:weightSum="1"
         tools:context="id.sch.smktelkom_mlg.tugas01.xirpl2013.formpendaftaranclub.MainActivity">
 
         <TextView
@@ -26,11 +27,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="250px"
+            android:layout_width="162dp"
             android:layout_height="250px"
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="0.47"
             android:src="@drawable/logo" />
 
         <TextView
@@ -174,14 +176,14 @@
             tools:text="New Text" />
 
         <TextView
-            android:id="@+id/textViewPS"
+            android:id="@+id/textViewJeka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             tools:text="New Text" />
 
         <TextView
-            android:id="@+id/textViewJeka"
+            android:id="@+id/textViewPS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

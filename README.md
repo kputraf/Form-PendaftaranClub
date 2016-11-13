@@ -34,6 +34,6 @@ Kelas : XIRPL2
 
 Absen : 13
 
-NIS : 4737
+NIS : 4737/1456.070
 
 Nama Sekolah : SMK TELKOM MALANG
